@@ -1,4 +1,4 @@
-package com.dev.watchapi.entity;
+package com.dev.watchapi.entity.enums;
 
 public enum TipoMovimento {
 
