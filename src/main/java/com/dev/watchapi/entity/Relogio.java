@@ -47,7 +47,7 @@ public class Relogio {
     private TipoVidro tipoVidro;
 
     @Column(nullable = false)
-    private int resistenciaAquaM;
+    private int resistenciaAguaM;
 
     @Column(nullable = false)
     private int diametroMm;
