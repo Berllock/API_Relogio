@@ -1,6 +1,9 @@
 package com.dev.watchapi.service;
 
 import com.dev.watchapi.entity.Relogio;
+import com.dev.watchapi.entity.enums.MaterialCaixa;
+import com.dev.watchapi.entity.enums.TipoMovimento;
+import com.dev.watchapi.entity.enums.TipoVidro;
 import org.springframework.data.jpa.domain.Specification;
 
 public class RelogioSpecs {
@@ -39,18 +42,18 @@ public class RelogioSpecs {
         return (root, q, cb) ->  cb.equal(root.get("referencia"), referencia);
     }
 
-    public static Specification<Relogio> tipoMovimentoIgual(String tipoMovimento) {
-        if (blank(tipoMovimento)) return tudo();
+    public static Specification<Relogio> tipoMovimentoIgual(TipoMovimento tipoMovimento) {
+        if (tipoMovimento == null) return tudo();
         return(root, q, cb) ->  cb.equal(root.get("tipoMovimento"), tipoMovimento);
     }
 
-    public static Specification<Relogio> tipoVidroIgual(String tipoVidro) {
-        if (blank(tipoVidro)) return tudo();
+    public static Specification<Relogio> tipoVidroIgual(TipoVidro tipoVidro) {
+        if (tipoVidro == null) return tudo();
         return (root, q, cb) ->  cb.equal(root.get("tipoVidro"), tipoVidro);
     }
 
-    public static Specification<Relogio> materialCaixaIgual(String materialCaixa) {
-        if (blank(materialCaixa)) return tudo();
+    public static Specification<Relogio> materialCaixaIgual(MaterialCaixa materialCaixa) {
+        if (materialCaixa == null) return tudo();
         return (root, q, cb) ->  cb.equal(root.get("materialCaixa"), materialCaixa);
     }
 
