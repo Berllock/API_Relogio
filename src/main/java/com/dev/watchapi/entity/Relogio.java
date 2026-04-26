@@ -59,7 +59,7 @@ public class Relogio {
     private int espessuraMm;
 
     @Column(nullable = false)
-    private int larguraLugMm;
+    private int larguraMm;
 
     @Column(nullable = false)
     private long precoEmCentavos;
